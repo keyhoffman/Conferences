@@ -1,0 +1,8 @@
+#    .gitignore File
+#    -------------------------------------------------
+
+*.pyc
+
+/static
+/support
+/templates
