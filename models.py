@@ -47,7 +47,7 @@ class TeeShirtSize(messages.Enum):
     XXXL_M = 14
     XXXL_W = 15
 
-    # - - - Conference Definition - - - - - - - - - - - - - - - - - - -
+# - - - Conference Definition - - - - - - - - - - - - - - - - - - -
 
 
 class Conference(ndb.Model):
@@ -62,8 +62,6 @@ class Conference(ndb.Model):
     endDate = ndb.DateProperty()
     maxAttendees = ndb.IntegerProperty()
     seatsAvailable = ndb.IntegerProperty()
-
-
 
 
 class ConferenceForm(messages.Message):
@@ -97,3 +95,15 @@ class ConferenceForms(messages.Message):
 class ConferenceQueryForms(messages.Message):
     """ConferenceQueryForms -- multiple ConferenceQueryForm inbound form message"""
     filters = messages.MessageField(ConferenceQueryForm, 1, repeated=True)
+
+# - - - Transaction Definition - - - - - - - - - - - - - - - - - - -
+
+
+class BooleanMessage(messages.Message):
+    """BooleanMessage-- outbound Boolean value message"""
+    data = messages.BooleanField(1)
+
+
+class ConflictException(endpoints.ServiceException):
+    """ConflictException -- exception mapped to HTTP 409 response"""
+    http_status = httplib.CONFLICT
