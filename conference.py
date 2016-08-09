@@ -248,8 +248,6 @@ class ConferenceApi(remote.Service):
     @endpoints.method(ConferenceQueryForms, ConferenceForms, path='queryConferences', http_method='POST', name='queryConferences')
     def queryConferences(self, request):
         """query for conferences"""
-        # TEST 1
-        # TEST 2
         conferences = self._getQuery(request)
 
         # return one individual ConferenceForm object per Conference
