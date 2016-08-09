@@ -251,7 +251,7 @@ class ConferenceApi(remote.Service):
         conferences = self._getQuery(request)
 
         # return one individual ConferenceForm object per Conference
-        return ConferenceForms(items=[self._copyConferenceToForm(conf, "") for conf in conferences])  # check this isnt causing error
+        return ConferenceForms(items=[self._copyConferenceToForm(conf, "") for conf in conferences])
 
     @endpoints.method(message_types.VoidMessage, ConferenceForms, path='getConferencesCreated', http_method='POST', name='getConferencesCreated')
     def getConferencesCreated(self, request):

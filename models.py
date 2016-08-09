@@ -13,6 +13,7 @@ class Profile(ndb.Model):
     displayName = ndb.StringProperty()
     mainEmail = ndb.StringProperty()
     teeShirtSize = ndb.StringProperty(default='NOT_SPECIFIED')
+    conferenceKeysToAttend = ndb.StringProperty(repeated=True)
 
 
 class ProfileMiniForm(messages.Message):
