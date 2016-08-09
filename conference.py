@@ -243,7 +243,6 @@ class ConferenceApi(remote.Service):
     @endpoints.method(ConferenceForm, ConferenceForm, path='conference', http_method='POST', name='createConference')
     def createConference(self, request):
         """Create new conference"""
-        # MORE Fake
         return self._createConferenceObject(request)
 
     @endpoints.method(ConferenceQueryForms, ConferenceForms, path='queryConferences', http_method='POST', name='queryConferences')
