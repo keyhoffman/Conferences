@@ -9,6 +9,13 @@ indexes:
 
 - kind: Conference
   properties:
+    - name: city
+    - name: month
+    - name: maxAttendees
+    - name: name
+
+- kind: Conference
+  properties:
   - name: city
   - name: month
 
@@ -26,21 +33,26 @@ indexes:
   properties:
   - name: city
   - name: maxAttendees
+
+- kind: Conference
+  properties:
+  - name: city
+  - name: maxAttendees
+    direction: desc
+
+- kind: Conference
+  properties:
+  - name: city
+  - name: maxAttendees
     direction: desc
   - name: name
 
 - kind: Conference
   properties:
   - name: city
-  - name: maxAttendees
+  - name: name
 
 - kind: Conference
   properties:
-  - name: city
   - name: maxAttendees
-    direction: desc
-
-- kind: Conference
-  properties:
-  - name: city
   - name: name
