@@ -36,9 +36,7 @@ def getUserId(user, id_type="email"):
         return user.get('user_id', '')
 
     if id_type == "custom":
-        # implement your own user_id creation and getting algorythm
-        # this is just a sample that queries datastore for an existing profile
-        # and generates an id if profile does not exist for an email
+
         profile = Conference.query(Conference.mainEmail == user.email())
         if profile:
             return profile.id()
